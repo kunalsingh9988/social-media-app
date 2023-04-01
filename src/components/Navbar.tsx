@@ -1,38 +1,40 @@
-import React from 'react'
-import {Link} from "react-router-dom"
-import {auth} from "../config/firebase"
-import {useAuthState} from "react-firebase-hooks/auth"
-import {signOut} from "firebase/auth"
+import React from "react";
+import { Link } from "react-router-dom";
+import { auth } from "../config/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 const Navbar = () => {
-  const[user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
-  const signUserOut = async()=>{
-     await signOut(auth)
-  }
-
+  const signUserOut = async () => {
+    await signOut(auth);
+  };
 
   return (
-    <div>
-      <div className="nav">
-      <Link to="/">Home</Link>
-      <Link to="/login">Login</Link>
+    <div className="nav">
+      <div className="nav-link">
+        <Link to="/">Home</Link>
+
+        {!user ? (
+          <Link to="/login">Login</Link>
+        ) : (
+          <Link to="/createpost">CreatePost</Link>
+        )}
       </div>
-       
 
-       <div className="user-data">
-        {user && 
-        <>
-       <p>{user?.displayName}</p>
-       <img src={user?.photoURL || ""} width="100px" height="100px" alt=""/>
-       <button onClick={signUserOut}>Log Out</button>
-       </>
-      }
-       </div>
-      
-      
-      
+      <div className="user-data">
+        {user && (
+          <>
+            <img className="user-img" src={user?.photoURL || ""} alt="" />
+            <p>Hello! {user?.displayName}</p>
+            <button className="logout-btn" onClick={signUserOut}>
+              Log Out
+            </button>
+          </>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

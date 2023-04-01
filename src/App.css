@@ -1,4 +1,132 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+   /* global font family  */
+body{
+  font-family: 'Indie Flower', cursive;
+  background-color: rgb(105, 105, 105);
 }
 
+
+/* navbar  */
+.nav{
+  display: flex;
+  justify-content: flex-end;
+
+  height: 200px;
+  background-color: rgb(38, 38, 38);
+}
+.user-img{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+.nav-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 250px;
+  margin-right: 200px;
+}
+
+.nav-link a {
+  margin-top: 30px;
+  margin-left: 30px;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+
+
+}
+
+/* user data in navbar  */
+.user-data{
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  align-items: center;
+
+  width: 350px;
+}
+
+.user-data p {
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+.logout-btn{
+  margin-top: 5px;
+  height: 30px;
+  width: 70px;
+  outline: 1px solid ;
+  border: none;
+  background-color: rgb(38, 38, 38);
+  color: rgb(255, 97, 97);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+/* form  */
+.form-parent{
+  display: flex;
+  justify-content: center;
+}
+.form-post{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  height: 350px;
+  width: 600px;
+  background-color: rgb(38, 38, 38);
+  border-radius: 10px;
+}
+.input-title{
+  outline: none;
+  border: none;
+  background-color: rgb(67, 67, 67);
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  padding: 20px;
+}
+.input-description{
+  outline: none;
+  margin-top: 10px;
+  border: none;
+  background-color: rgb(67, 67, 67);
+  /* resize: none; */
+  width: 300px;
+ height: 200px;
+  border-radius: 10px;
+  padding: 20px;
+  height: 300px;
+
+}
+.submit-btn{
+  margin-top: 5px;
+  width: 80px;
+  height: 40px;
+  outline: none;
+  border: none;
+  background-color: rgb(54, 54, 54);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.submit-btn:hover{
+  background-color: rgb(93, 93, 93);
+}
+.error-message{
+  color: rgb(255, 97, 97);
+}
